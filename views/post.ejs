@@ -1,0 +1,43 @@
+<%- include("partials/header"); -%>
+
+
+<h1 id="blogTitle"><%=title%></h1>
+
+<p id="blogContent"><%=content%></p>
+
+<h3 id="blogiD"><%=postId%></h3>
+
+
+
+<button class="btn btn-primary" type="button" onclick="myFunction()">Edit</button>
+
+
+<script>
+        function myFunction() {
+            var x = document.getElementById("blogTitle").innerHTML;
+            document.getElementById("upTitle").value = x;
+            var y = document.getElementById("blogContent").innerHTML;
+            document.getElementById("myTextarea").value = y;
+            var z = document.getElementById("blogiD").innerHTML;
+            document.getElementById("upBlog").value = z;
+        }
+    
+
+</script>
+
+
+<form class="" action="/update" method="POST">
+    <div class="form-group">
+        <label>Blog ID</label>
+        <input readonly id="upBlog" class="form-control" type="text" name="titleId">
+        <label>Title</label>
+        <input id="upTitle" class="form-control" type="text" name="titleToBeUpdated">
+        <label>Post</label>
+        <textarea id="myTextarea" class="form-control" name="contentToBeUpdated" rows="5" cols="30"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit" name="button">Update</button>
+</form>
+
+
+
+<%- include("partials/footer"); -%>
