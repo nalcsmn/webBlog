@@ -93,6 +93,8 @@ app.get("/update", function (req, res) {
 });
 
 app.post("/update", function (req, res) {
+  
+
   const titleID = req.body.titleId;
   const titleUpdated = req.body.titleToBeUpdated;
   const contentUpdated = req.body.contentToBeUpdated;
