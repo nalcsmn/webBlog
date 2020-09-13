@@ -93,21 +93,17 @@ app.get("/update", function (req, res) {
 });
 
 app.post("/update", function (req, res) {
-  
-
   const titleID = req.body.titleId;
   const titleUpdated = req.body.titleToBeUpdated;
   const contentUpdated = req.body.contentToBeUpdated;
-  Post.updateOne(
+  Post.update(
     { _id: titleID },
-    { title: titleUpdated },
-    { content: contentUpdated },
+    { title: titleUpdated , content: contentUpdated },
     function (err) {
       if (err) {
         console.log(err);
       } else {
         console.log("Succesfully updated");
-
         res.redirect("/");
       }
     }
